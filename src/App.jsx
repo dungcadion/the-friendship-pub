@@ -4,14 +4,28 @@ import { Menu as MenuIcon, X, ArrowLeft, ArrowRight } from "lucide-react";
 
 // --- Local Image Imports ---
 import myLogo from "./assets/images/logo.png";
-import BgUrl from "./assets/images/hero.jpeg";
-import pubExt from "./assets/images/exterior.jpeg";
-import gallery1 from "./assets/images/att.jUg4C8OP-sTlxHioL5j9O634Zb2sD7TWarU2Q-gF314.jpeg";
-import gallery2 from "./assets/images/att.klS1MLfGwDwzCttcJV0r1LSbZ6vbYrsvRlZi-QbvyPk.jpeg";
-import gallery3 from "./assets/images/att.ou2TH2_BMacWTu0gw2F0Kh9hKeDfQwvHQSLZxuSSTP8.jpeg";
-import gallery4 from "./assets/images/att.PlqwUQZFH1EnhwxHMQtZvuL6mm3m9reBqn2KZdsa02w.jpeg";
-import gallery5 from "./assets/images/att.SqW3A_UG9oXD8FuadC98IOvuXE7YKNFqJmCUV1Nybu0.jpeg";
-import gallery6 from "./assets/images/att.7w2GTOgDGMWBeIpSywtr4pm8MMXW4zIlWH_Vxykx0MY.jpeg";
+import BgUrl from "./assets/images/x-7.jpg";
+import pubExt from "./assets/images/outside.jpg";
+import gallery1 from "./assets/images/x-1.jpg";
+import gallery2 from "./assets/images/x-2.jpg";
+import gallery3 from "./assets/images/x-3.jpg";
+import gallery4 from "./assets/images/x-4.jpg";
+import gallery5 from "./assets/images/x-5.jpg";
+import gallery6 from "./assets/images/x-6.jpg";
+import gallery7 from "./assets/images/x-7.jpg";
+import gallery8 from "./assets/images/x-8.jpg";
+import gallery9 from "./assets/images/x-9.jpg";
+import gallery10 from "./assets/images/x-10.jpg";
+import gallery11 from "./assets/images/x-11.jpg";
+import gallery12 from "./assets/images/x-12.jpg";
+import gallery13 from "./assets/images/x-13.jpg";
+import gallery14 from "./assets/images/x-14.jpg";
+import gallery15 from "./assets/images/x-15.jpg";
+import gallery16 from "./assets/images/x-16.jpg";
+import gallery17 from "./assets/images/x-17.jpg";
+import gallery18 from "./assets/images/x-18.jpg";
+import gallery19 from "./assets/images/x-19.jpg";
+import gallery20 from "./assets/images/x-20.jpg"; 
 
 // --- Constants for local images ---
 const logoUrl = myLogo;
@@ -24,6 +38,20 @@ const galleryImages = [
   gallery4,
   gallery5,
   gallery6,
+  gallery7,
+  gallery8,
+  gallery9,
+  gallery10,
+  gallery11,
+  gallery12,
+  gallery13,
+  gallery14,
+  gallery15,
+  gallery16,
+  gallery17,
+  gallery18,
+  gallery19,
+  gallery20
 ];
 
 // --- Facebook SVG Icon Components ---
