@@ -308,7 +308,7 @@ const ContactSection = () => (
             </div>
             <div className="h-64 lg:h-80 w-full rounded-lg overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1525.021028701048!2d120.55909288863625!3d15.146522774944936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f3044a8d0571%3A0x651fb43b5997235!2sTopG%202!5e0!3m2!1sen!2sph!4v1719168037618!5m2!1sen!2sph"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3851.216112902587!2d120.5573954433203!3d15.146471566420342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f314b4c2cd3f%3A0xb15c30c1060444f1!2sThe%20Friendship%20Pub!5e0!3m2!1sen!2sph!4v1754562554718!5m2!1sen!2sph"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}
