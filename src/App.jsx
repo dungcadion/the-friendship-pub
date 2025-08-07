@@ -134,9 +134,9 @@ const HomeSection = () => (
         >
           The Friendship Pub
         </h1>
-        <p className="text-lg md:text-xl lg:text-2xl font-light text-gray-200 max-w-2xl mx-auto">
-          We are opening soon!
-        </p>
+          <p className="text-base md:text-lg lg:text-xl font-light text-gray-200 max-w-2xl mx-auto [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
+            Friendship Highway, Angeles City, Pampanga.
+          </p>
       </div>
     </section>
   );
@@ -157,11 +157,11 @@ const HomeSection = () => (
               className="text-4xl md:text-5xl font-bold mb-6 text-[#FDE767]"
               style={{ fontFamily: "'Cinzel', serif" }}
             >
-              Our Story
+              About Us
             </h2>
-            <p className="mb-4 text-lg leading-relaxed">
-              Every great story has a beginning. Ours started in a small pub, where friends became family over shared drinks and stories. That simple idea of connection has now found a new home. We've evolved from a cherished local hideaway into a full-service destination on Friendship Highway, ready to welcome a new generation of friends into our story.
-            </p>
+              <p className="mb-4 text-lg leading-relaxed">
+                The Friendship Pub, an English pub-inspired establishment, offers a wide selection of food and drinks. The menu features a variety of main dishes, including Smoked Beef Ribs, Shepherd's Pie, and Crispy Pata. Guests can also choose from a range of salads, such as the Chef Salad and the signature Pub Salad. Pasta options include Carbonara and Lasagna. The drink menu offers a comprehensive selection, including cocktails, whiskey, and a variety of beers. We serve draft beers on tap, with varieties that sometimes change. Currently available draft beers include Hoegaarden Rosée (3% ABV) and Sapporo Premium Beer (5% ABV), as well as Mixtape Pale Ale (5.5% ABV) and German Märzen (6% ABV).
+              </p>
           </div>
         </div>
       </div>
@@ -208,7 +208,7 @@ const GallerySection = () => {
                         Gallery
                     </h2>
                     <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">
-                        A glimpse into the proposed design of The Friendship Pub.
+                        A glimpse into The Friendship Pub.
                     </p>
                 </div>
                 
@@ -303,7 +303,8 @@ const ContactSection = () => (
               </p>
               <p className="text-lg text-gray-400">Philippines</p>
               <h3 className="text-2xl font-bold text-white mt-6 mb-4">Hours</h3>
-              <p className="text-lg">Monday - Sunday: 4pm - 2am</p>
+              <p className="text-lg">Tuesday - Sunday: 5pm - 2am</p>
+              <p className="text-lg">Monday: Closed</p>
             </div>
             <div className="h-64 lg:h-80 w-full rounded-lg overflow-hidden">
               <iframe
