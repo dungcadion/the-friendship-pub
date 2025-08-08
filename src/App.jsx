@@ -26,6 +26,14 @@ import gallery17 from "./assets/images/x-17.jpg";
 import gallery18 from "./assets/images/x-18.jpg";
 import gallery19 from "./assets/images/x-19.jpg";
 import gallery20 from "./assets/images/x-20.jpg"; 
+import sony1 from "./assets/images/sony-1.jpg";
+import sony2 from "./assets/images/sony-2.jpg";
+import sony3 from "./assets/images/sony-3.jpg";
+import sony4 from "./assets/images/sony-4.jpg";
+import sony5 from "./assets/images/sony-5.jpg";
+import sony6 from "./assets/images/sony-6.jpg";
+import sony7 from "./assets/images/sony-7.jpg";
+import sony8 from "./assets/images/sony-8.jpg";
 
 // --- Constants for local images ---
 const logoUrl = myLogo;
@@ -33,15 +41,23 @@ const heroBgUrl = BgUrl;
 const aboutImgUrl = pubExt;
 const galleryImages = [
   gallery1,
+  sony1,
   gallery2,
+  // sony2,
   gallery3,
+  sony3,
   gallery4,
+  sony4,
   gallery5,
+  sony5,
   gallery6,
+  sony6,
   gallery7,
+  sony7,
   gallery8,
+  sony8,
   gallery9,
-  gallery10,
+  // gallery10,
   gallery11,
   gallery12,
   gallery13,
@@ -77,7 +93,7 @@ const InstagramIcon = ({ className }) => (
         xmlns="http://www.w3.org/2000/svg"
     >
         <title>Instagram</title>
-        <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.784.305-1.457.717-2.126 1.385C1.344 2.683.93 3.357.63 4.14c-.3.765-.5 1.635-.558 2.913C.015 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.26 2.148.558 2.913.3.784.717 1.457 1.385 2.126.67.67 1.344 1.077 2.126 1.385.765.3 1.635.5 2.913.558C8.333 23.985 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.26 2.913-.558.784-.3 1.457-.717 2.126-1.385.67-.67 1.077-1.344 1.385-2.126.3-.765.5-1.635.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.26-2.148-.558-2.913-.3-.784-.717-1.457-1.385-2.126C21.317 1.344 20.643.93 19.86.63c-.765-.3-1.635-.5-2.913-.558C15.667.015 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.013 3.584-.07 4.849c-.053 1.17-.249 1.805-.413 2.227-.217.562-.477.96-.896 1.382-.42.419-.82.679-1.381.896-.422.164-1.057.36-2.227.413-1.266.057-1.646.07-4.85.07s-3.584-.013-4.849-.07c-1.17-.053-1.805-.249-2.227-.413-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.82-1.381.896-.164-.422-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.013-3.584.07-4.849c.053-1.17.249-1.805.413-2.227.217-.562.477-.96.896-1.382.42-.419.819-.679 1.381-.896.422-.164 1.057-.36 2.227-.413C8.415 2.176 8.797 2.16 12 2.16zm0 3.39c-3.405 0-6.16 2.755-6.16 6.16s2.755 6.16 6.16 6.16 6.16-2.755 6.16-6.16-2.755-6.16-6.16-6.16zm0 10.16c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.44.645-1.44 1.44s.645 1.44 1.44 1.44c.795 0 1.44-.645 1.44-1.44s-.645-1.44-1.44-1.44z"/>
+        <path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.784.305-1.457.717-2.126 1.385C1.344 2.683.93 3.357.63 4.14c-.3.765-.5 1.635-.558 2.913C.015 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.26 2.148.558 2.913.3.784.717 1.457 1.385 2.126.67.67 1.344 1.077 2.126 1.385.765.3 1.635.5 2.913.558C8.333 23.985 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.26 2.913-.558.784-.3 1.457-.717 2.126-1.385.67-.67 1.077-1.344 1.385-2.126.3-.765.5-1.635.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.26-2.148-.558-2.913-.3-.784-.717-1.457-1.385-2.126C21.317 1.344 20.643.93 19.86.63c-.765-.3-1.635-.5-2.913-.558C15.667.015 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.013 3.584-.07 4.849c-.053 1.17-.249 1.805-.413 2.227-.217.562-.477.96-.896 1.382-.42.419-.82.679-1.381.896-.422.164-1.057.36-2.227.413C8.415 2.176 8.797 2.16 12 2.16zm0 3.39c-3.405 0-6.16 2.755-6.16 6.16s2.755 6.16 6.16 6.16 6.16-2.755 6.16-6.16-2.755-6.16-6.16-6.16zm0 10.16c-2.209 0-4-1.79-4-4s1.791-4 4-4 4 1.79 4 4-1.791 4-4 4zm6.406-11.845c-.796 0-1.44.645-1.44 1.44s.645 1.44 1.44 1.44c.795 0 1.44-.645 1.44-1.44s-.645-1.44-1.44-1.44z"/>
     </svg>
 );
 
@@ -168,22 +184,43 @@ const HomeSection = () => (
     </section>
   );
   
+const foodMenuPdf = "/menus/food-menu.pdf";
+const drinksMenuPdf = "/menus/drinks-menu.pdf";
+
 const MenuSection = () => (
-    <section id="menu" className="py-20 md:py-32 bg-[#141414]">
-      <div className="container mx-auto px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2
-            className="text-4xl md:text-5xl font-bold text-[#FDE767]"
-            style={{ fontFamily: "'Cinzel', serif" }}
+  <section id="menu" className="py-20 md:py-32 bg-[#141414]">
+    <div className="container mx-auto px-6 lg:px-8">
+      <div className="text-center mb-16">
+        <h2
+          className="text-4xl md:text-5xl font-bold text-[#FDE767]"
+          style={{ fontFamily: "'Cinzel', serif" }}
+        >
+          Our Menu
+        </h2>
+        <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">
+          View our menus below:
+        </p>
+        <div className="flex flex-col md:flex-row justify-center gap-6 mt-8">
+          <a
+            href={foodMenuPdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
           >
-            Our Menu
-          </h2>
-          <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">
-            Coming soon!
-          </p>
+            Food Menu
+          </a>
+          <a
+            href={drinksMenuPdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
+          >
+            Drinks Menu
+          </a>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
   );
 
 const GallerySection = () => {
