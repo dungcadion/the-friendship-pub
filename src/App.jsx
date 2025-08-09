@@ -4,7 +4,6 @@ import { Menu as MenuIcon, X, ArrowLeft, ArrowRight } from "lucide-react";
 
 // --- Local Image Imports ---
 import myLogo from "./assets/images/logo.png";
-import BgUrl from "./assets/images/x-7.jpg";
 import pubExt from "./assets/images/outside.jpg";
 import gallery1 from "./assets/images/x-1.jpg";
 import gallery2 from "./assets/images/x-2.jpg";
@@ -25,7 +24,7 @@ import gallery16 from "./assets/images/x-16.jpg";
 import gallery17 from "./assets/images/x-17.jpg";
 import gallery18 from "./assets/images/x-18.jpg";
 import gallery19 from "./assets/images/x-19.jpg";
-import gallery20 from "./assets/images/x-20.jpg"; 
+import gallery20 from "./assets/images/x-20.jpg";
 import sony1 from "./assets/images/sony-1.jpg";
 import sony2 from "./assets/images/sony-2.jpg";
 import sony3 from "./assets/images/sony-3.jpg";
@@ -37,7 +36,7 @@ import sony8 from "./assets/images/sony-8.jpg";
 
 // --- Constants for local images ---
 const logoUrl = myLogo;
-const heroBgUrl = BgUrl;
+const heroBgUrl = gallery7; // Using gallery7 for the hero background
 const aboutImgUrl = pubExt;
 const galleryImages = [
   gallery1,
@@ -71,7 +70,6 @@ const galleryImages = [
 ];
 
 // --- Facebook SVG Icon Components ---
-
 const FacebookIcon = ({ className }) => (
   <svg
     className={className}
@@ -86,10 +84,10 @@ const FacebookIcon = ({ className }) => (
 
 // --- Instagram SVG Icon Component ---
 const InstagramIcon = ({ className }) => (
-    <svg 
-        className={className} 
-        role="img" 
-        viewBox="0 0 24 24" 
+    <svg
+        className={className}
+        role="img"
+        viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
     >
         <title>Instagram</title>
@@ -98,7 +96,6 @@ const InstagramIcon = ({ className }) => (
 );
 
 // --- Reusable Components ---
-
 const SocialSidebar = () => (
     <div className="hidden md:flex flex-col items-center justify-center space-y-6 fixed left-0 top-0 h-screen w-16 bg-black/50 backdrop-blur-sm z-40">
       <a
@@ -108,7 +105,6 @@ const SocialSidebar = () => (
       >
         <FacebookIcon className="w-6 h-6 fill-current" />
       </a>
-      {/* --- Instagram link in Sidebar --- */}
       <a
         href="https://www.instagram.com/thefriendship.pub/?igsh=eXhuoWxmcWI0eGoz"
         target="_blank" rel="noopener noreferrer"
@@ -116,7 +112,6 @@ const SocialSidebar = () => (
       >
         <InstagramIcon className="w-6 h-6 fill-current" />
       </a>
-      {/* --- ADDED END --- */}
     </div>
   );
 
@@ -135,7 +130,6 @@ const NavLink = ({ href, children, onClick, isActive }) => (
 );
 
 // --- Page Section Components ---
-
 const HomeSection = () => (
     <section
       id="home"
@@ -157,7 +151,7 @@ const HomeSection = () => (
     </section>
   );
 
-  const AboutSection = () => (
+const AboutSection = () => (
     <section id="about" className="py-20 md:py-32 bg-[#0F0F0F] text-gray-300">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
@@ -183,7 +177,7 @@ const HomeSection = () => (
       </div>
     </section>
   );
-  
+
 const foodMenuPdf = "/menus/food-menu.pdf";
 const drinksMenuPdf = "/menus/drinks-menu.pdf";
 
@@ -248,7 +242,7 @@ const GallerySection = () => {
                         A glimpse into The Friendship Pub.
                     </p>
                 </div>
-                
+
                 <div className="relative max-w-4xl mx-auto">
                     <div className="overflow-hidden rounded-lg" ref={emblaRef}>
                         <div className="flex">
@@ -275,8 +269,35 @@ const GallerySection = () => {
     );
 };
 
+const GOOGLE_FORM_ACTION_URL = "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfvtYWkuc_lzieJuueivrZTbbYIsbmeF2QMrXC26nVvYKrw0A/formResponse";
+const FIELD_NAME = "entry.1493290342";
+const FIELD_EMAIL = "entry.2088171504";
+const FIELD_MESSAGE = "entry.1574605189";
 
-const ContactSection = () => (
+const ContactSection = () => {
+  const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setSending(true);
+    setSent(false);
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    fetch(GOOGLE_FORM_ACTION_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: data,
+    }).then(() => {
+      setSending(false);
+      setSent(true);
+      form.reset();
+    });
+  };
+
+  return (
     <section id="contact" className="py-20 md:py-32 bg-[#141414] text-gray-300">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
@@ -293,7 +314,7 @@ const ContactSection = () => (
         <div className="flex flex-col lg:flex-row gap-12">
           <div className="lg:w-1/2 w-full bg-[#0F0F0F] p-8 rounded-lg">
             <h3 className="text-2xl font-bold text-white mb-6">Send a Message</h3>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="mb-4">
                 <label htmlFor="name" className="block text-gray-400 mb-2">
                   Name
@@ -301,6 +322,8 @@ const ContactSection = () => (
                 <input
                   type="text"
                   id="name"
+                  name={FIELD_NAME}
+                  required
                   className="w-full bg-[#222] text-white rounded border border-gray-600 focus:border-[#FDE767] focus:ring-2 focus:ring-[#FDE767]/50 p-3 outline-none transition-colors"
                 />
               </div>
@@ -311,6 +334,8 @@ const ContactSection = () => (
                 <input
                   type="email"
                   id="email"
+                  name={FIELD_EMAIL}
+                  required
                   className="w-full bg-[#222] text-white rounded border border-gray-600 focus:border-[#FDE767] focus:ring-2 focus:ring-[#FDE767]/50 p-3 outline-none transition-colors"
                 />
               </div>
@@ -320,16 +345,24 @@ const ContactSection = () => (
                 </label>
                 <textarea
                   id="message"
+                  name={FIELD_MESSAGE}
                   rows="5"
+                  required
                   className="w-full bg-[#222] text-white rounded border border-gray-600 focus:border-[#FDE767] focus:ring-2 focus:ring-[#FDE767]/50 p-3 outline-none transition-colors"
                 ></textarea>
               </div>
               <button
                 type="submit"
+                disabled={sending}
                 className="w-full bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
               >
-                Send
+                {sending ? "Sending..." : "Send"}
               </button>
+              {sent && (
+                <p className="text-[#FDE767] text-center mt-4">
+                  Message sent! Thank you.
+                </p>
+              )}
             </form>
           </div>
           <div className="lg:w-1/2 w-full">
@@ -359,6 +392,7 @@ const ContactSection = () => (
       </div>
     </section>
   );
+};
 
 const Footer = () => (
     <footer className="bg-black text-gray-500 py-12">
@@ -375,7 +409,6 @@ const Footer = () => (
             >
                 <FacebookIcon className="w-5 h-5 fill-current" />
             </a>
-            {/* --- Instagram link in Footer --- */}
             <a
                 href="https://www.instagram.com/thefriendship.pub/?igsh=eXhuoWxmcWI0eGoz"
                 target="_blank" rel="noopener noreferrer"
@@ -435,19 +468,6 @@ export default function App() {
 
   return (
     <div className="bg-[#0F0F0F] min-h-screen">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="true"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-
       <SocialSidebar />
 
       <header className="fixed top-0 left-0 w-full bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 transition-all duration-300">
