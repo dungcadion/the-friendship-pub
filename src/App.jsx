@@ -97,7 +97,7 @@ const InstagramIcon = ({ className }) => (
 
 // --- Reusable Components ---
 const SocialSidebar = () => (
-    <div className="hidden md:flex flex-col items-center justify-center space-y-6 fixed left-0 top-0 h-screen w-16 bg-black/50 backdrop-blur-sm z-40">
+    <div className="hidden md:flex flex-col items-center justify-center space-y-6 fixed left-0 top-0 h-screen w-10 bg-black/50 backdrop-blur-sm z-40">
       <a
         href="https://www.facebook.com/profile.php?id=61577305734801"
         target="_blank" rel="noopener noreferrer"
@@ -140,7 +140,7 @@ const HomeSection = () => (
       <div className="relative z-10 p-4">
         <h1
           className="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tighter mb-4"
-          style={{ fontFamily: "'Cinzel', serif", color: "#FDE767" }}
+          style={{ fontFamily: "Times New Roman, Times, serif", color: "#FDE767" }}
         >
           The Friendship Pub
         </h1>
@@ -165,7 +165,7 @@ const AboutSection = () => (
           <div className="md:w-1/2 w-full">
             <h2
               className="text-4xl md:text-5xl font-bold mb-6 text-[#FDE767]"
-              style={{ fontFamily: "'Cinzel', serif" }}
+              style={{ fontFamily: "Times New Roman, Times, serif" }}
             >
               About Us
             </h2>
@@ -187,7 +187,7 @@ const MenuSection = () => (
       <div className="text-center mb-16">
         <h2
           className="text-4xl md:text-5xl font-bold text-[#FDE767]"
-          style={{ fontFamily: "'Cinzel', serif" }}
+          style={{ fontFamily: "Times New Roman, Times, serif" }}
         >
           Our Menu
         </h2>
@@ -234,7 +234,7 @@ const GallerySection = () => {
                 <div className="text-center mb-16">
                     <h2
                         className="text-4xl md:text-5xl font-bold text-[#FDE767]"
-                        style={{ fontFamily: "'Cinzel', serif" }}
+                        style={{ fontFamily: "Times New Roman, Times, serif" }}
                     >
                         Gallery
                     </h2>
@@ -303,7 +303,7 @@ const ContactSection = () => {
         <div className="text-center mb-16">
           <h2
             className="text-4xl md:text-5xl font-bold text-[#FDE767]"
-            style={{ fontFamily: "'Cinzel', serif" }}
+            style={{ fontFamily: "Times New Roman, Times, serif" }}
           >
             Get In Touch
           </h2>
@@ -395,7 +395,7 @@ const ContactSection = () => {
 };
 
 const Footer = () => (
-    <footer className="bg-black text-gray-500 py-12">
+    <footer className="bg-black text-gray-500 py-3">
       <div className="container mx-auto px-6 lg:px-8 text-center">
         <p>
           © {new Date().getFullYear()} The Friendship Pub. All Rights
@@ -471,7 +471,7 @@ export default function App() {
       <SocialSidebar />
 
       <header className="fixed top-0 left-0 w-full bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 transition-all duration-300">
-        <nav className="container mx-auto px-6 lg:px-8 py-4 flex justify-between items-center">
+        <nav className="container mx-auto px-6 lg:px-8 py-3 flex justify-between items-center">
           <a
             href="#home"
             onClick={(e) => handleNavClick(e, "home")}
@@ -484,7 +484,7 @@ export default function App() {
             />
             <span
               className="text-white font-bold text-lg hidden sm:block"
-              style={{ fontFamily: "'Cinzel', serif" }}
+              style={{ fontFamily: "Times New Roman, Times, serif" }}
             >
               The Friendship Pub
             </span>
