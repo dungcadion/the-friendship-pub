@@ -34,6 +34,15 @@ import sony6 from "./assets/images/sony-6.jpg";
 import sony7 from "./assets/images/sony-7.jpg";
 import sony8 from "./assets/images/sony-8.jpg";
 
+// --- NEW: Cocktail Image Imports ---
+import cocktail1 from "./assets/images/cocktails/1.jpg";
+import cocktail2 from "./assets/images/cocktails/2.jpg";
+import cocktail3 from "./assets/images/cocktails/3.jpg";
+import cocktail4 from "./assets/images/cocktails/4.jpg";
+import cocktail5 from "./assets/images/cocktails/5.jpg";
+import cocktail6 from "./assets/images/cocktails/6.jpg";
+
+
 // --- Constants for local images ---
 const logoUrl = myLogo;
 const heroBgUrl = gallery7; // Using gallery7 for the hero background
@@ -155,11 +164,11 @@ const AboutSection = () => (
     <section id="about" className="py-20 md:py-32 bg-[#0F0F0F] text-gray-300">
       <div className="container mx-auto px-6 lg:px-8">
         <div className="flex flex-col md:flex-row items-center gap-12 md:gap-16">
-          <div className="md:w-1/2 w-full">
+          <div className="md:w-1/2 w-full group overflow-hidden rounded-lg shadow-2xl"> 
             <img
               src={aboutImgUrl}
               alt="The Friendship Pub Exterior"
-              className="rounded-lg shadow-2xl w-full h-auto object-cover"
+              className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
             />
           </div>
           <div className="md:w-1/2 w-full">
@@ -181,10 +190,44 @@ const AboutSection = () => (
 const foodMenuPdf = "/menus/food-menu.pdf";
 const drinksMenuPdf = "/menus/drinks-menu.pdf";
 
+// --- NEW: Data for the new cocktail gallery ---
+const cocktailImages = [
+  { src: cocktail1 },
+  { src: cocktail2 },
+  { src: cocktail3 },
+  { src: cocktail4 },
+  { src: cocktail5 },
+  { src: cocktail6 },
+];
+
 const MenuSection = () => (
   <section id="menu" className="py-20 md:py-32 bg-[#141414]">
     <div className="container mx-auto px-6 lg:px-8">
-      <div className="text-center mb-16">
+
+      {/* --- START: New Cocktail Gallery --- */}
+      <div>
+        <h3 className="text-4xl md:text-5xl text-[#FDE767] font-bold text-left mb-8" style={{ fontFamily: "Times New Roman, Times, serif" }}>
+          The Pub's Featured Cocktails
+        </h3>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+          {cocktailImages.map((cocktail, index) => (
+            <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
+              <img
+                src={cocktail.src}
+                alt={cocktail.name}
+                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+              />
+               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+               <div className="absolute bottom-0 left-0 p-4">
+                  <h4 className="text-white text-lg font-semibold tracking-wide">{cocktail.name}</h4>
+               </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* --- END: New Cocktail Gallery --- */}
+
+      <div className="text-center mt-16 md:mt-24">
         <h2
           className="text-4xl md:text-5xl font-bold text-[#FDE767]"
           style={{ fontFamily: "Times New Roman, Times, serif" }}
@@ -192,7 +235,7 @@ const MenuSection = () => (
           Our Menu
         </h2>
         <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">
-          View our menus below:
+          View our full selection of food and drinks.
         </p>
         <div className="flex flex-col md:flex-row justify-center gap-6 mt-8">
           <a
@@ -213,9 +256,10 @@ const MenuSection = () => (
           </a>
         </div>
       </div>
+
     </div>
   </section>
-  );
+);
 
 const GallerySection = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
@@ -373,7 +417,7 @@ const ContactSection = () => {
               </p>
               <p className="text-lg text-gray-400">Philippines</p>
               <h3 className="text-2xl font-bold text-white mt-6 mb-4">Hours</h3>
-              <p className="text-lg">Tuesday - Sunday: 5pm - 2am</p>
+              <p className="text-lg">Tuesday - Sunday: 4pm - 1am</p>
               <p className="text-lg">Monday: Closed</p>
             </div>
             <div className="h-64 lg:h-80 w-full rounded-lg overflow-hidden">
