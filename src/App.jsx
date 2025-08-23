@@ -201,63 +201,88 @@ const cocktailImages = [
   { src: cocktail6 },
 ];
 
-const MenuSection = () => (
-  <section id="menu" className="py-20 md:py-32 bg-[#141414]">
-    <div className="container mx-auto px-6 lg:px-8">
-      <div>
-        <h3 className="text-4xl md:text-5xl text-[#FDE767] font-bold text-left mb-8" style={{ fontFamily: "Times New Roman, Times, serif" }}>
-          The Pub's Featured Cocktails
-        </h3>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
-          {cocktailImages.map((cocktail, index) => (
-            <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
-              <img
-                src={cocktail.src}
-                alt={cocktail.name}
-                loading="lazy"
-                className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
-              />
-               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
-               <div className="absolute bottom-0 left-0 p-4">
-                  <h4 className="text-white text-lg font-semibold tracking-wide">{cocktail.name}</h4>
-               </div>
-            </div>
-          ))}
-        </div>
-      </div>
-      <div className="text-center mt-16 md:mt-24">
-        <h2
-          className="text-4xl md:text-5xl font-bold text-[#FDE767]"
-          style={{ fontFamily: "Times New Roman, Times, serif" }}
-        >
-          Our Menu
-        </h2>
-        <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">
-          View our full selection of food and drinks.
-        </p>
-        <div className="flex flex-col md:flex-row justify-center gap-6 mt-8">
-          <a
-            href={foodMenuPdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
-          >
-            Food Menu
-          </a>
-          <a
-            href={drinksMenuPdf}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
-          >
-            Drinks Menu
-          </a>
-        </div>
-      </div>
+const MenuSection = () => {
+  const [loadingPdf, setLoadingPdf] = useState(null); // This state will track which PDF is "loading"
 
-    </div>
-  </section>
-);
+  // This function handles the click event
+  const handlePdfClick = (pdfUrl, pdfType) => {
+    // 1. Set the loading state to show the "Loading..." text
+    setLoadingPdf(pdfType);
+
+    // 2. Open the PDF in a new tab
+    window.open(pdfUrl, '_blank');
+
+    // 3. After 3 seconds, reset the state to hide the loading text
+    setTimeout(() => {
+      setLoadingPdf(null);
+    }, 3000);
+  };
+
+  return (
+    <section id="menu" className="py-20 md:py-32 bg-[#141414]">
+      <div className="container mx-auto px-6 lg:px-8">
+        <div>
+          <h3 className="text-4xl md:text-5xl text-[#FDE767] font-bold text-left mb-8" style={{ fontFamily: "Times New Roman, Times, serif" }}>
+            The Pub's Featured Cocktails
+          </h3>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+            {cocktailImages.map((cocktail, index) => (
+              <div key={index} className="group relative overflow-hidden rounded-lg shadow-lg">
+                <img
+                  src={cocktail.src}
+                  alt={cocktail.name}
+                  loading="lazy"
+                  className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
+                />
+                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
+                 <div className="absolute bottom-0 left-0 p-4">
+                    <h4 className="text-white text-lg font-semibold tracking-wide">{cocktail.name}</h4>
+                 </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="text-center mt-16 md:mt-24">
+          <h2
+            className="text-4xl md:text-5xl font-bold text-[#FDE767]"
+            style={{ fontFamily: "Times New Roman, Times, serif" }}
+          >
+            Our Menu
+          </h2>
+          <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">
+            View our full selection of food and drinks.
+          </p>
+          <div className="flex flex-col md:flex-row justify-center gap-6 mt-8">
+            <a
+              href={foodMenuPdf}
+              onClick={(e) => {
+                e.preventDefault(); // Stop the link from opening immediately
+                handlePdfClick(foodMenuPdf, 'food');
+              }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
+            >
+              {loadingPdf === 'food' ? 'Loading...' : 'Food Menu'}
+            </a>
+            <a
+              href={drinksMenuPdf}
+              onClick={(e) => {
+                e.preventDefault(); // Stop the link from opening immediately
+                handlePdfClick(drinksMenuPdf, 'drinks');
+              }}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
+            >
+              {loadingPdf === 'drinks' ? 'Loading...' : 'Drinks Menu'}
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
 
 const GallerySection = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
