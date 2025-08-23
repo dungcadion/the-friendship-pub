@@ -34,7 +34,7 @@ import sony6 from "./assets/images/sony-6.jpg";
 import sony7 from "./assets/images/sony-7.jpg";
 import sony8 from "./assets/images/sony-8.jpg";
 
-// --- NEW: Cocktail Image Imports ---
+// --- Cocktail Image Imports ---
 import cocktail1 from "./assets/images/cocktails/1.jpg";
 import cocktail2 from "./assets/images/cocktails/2.jpg";
 import cocktail3 from "./assets/images/cocktails/3.jpg";
@@ -168,6 +168,7 @@ const AboutSection = () => (
             <img
               src={aboutImgUrl}
               alt="The Friendship Pub Exterior"
+              loading="lazy"
               className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
             />
           </div>
@@ -203,8 +204,6 @@ const cocktailImages = [
 const MenuSection = () => (
   <section id="menu" className="py-20 md:py-32 bg-[#141414]">
     <div className="container mx-auto px-6 lg:px-8">
-
-      {/* --- START: New Cocktail Gallery --- */}
       <div>
         <h3 className="text-4xl md:text-5xl text-[#FDE767] font-bold text-left mb-8" style={{ fontFamily: "Times New Roman, Times, serif" }}>
           The Pub's Featured Cocktails
@@ -215,6 +214,7 @@ const MenuSection = () => (
               <img
                 src={cocktail.src}
                 alt={cocktail.name}
+                loading="lazy"
                 className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-300"
               />
                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
@@ -225,8 +225,6 @@ const MenuSection = () => (
           ))}
         </div>
       </div>
-      {/* --- END: New Cocktail Gallery --- */}
-
       <div className="text-center mt-16 md:mt-24">
         <h2
           className="text-4xl md:text-5xl font-bold text-[#FDE767]"
@@ -295,6 +293,7 @@ const GallerySection = () => {
                                     <img
                                         src={src}
                                         alt={`Gallery image ${index + 1}`}
+                                        loading="lazy"
                                         className="w-full h-[300px] md:h-[500px] object-cover"
                                     />
                                 </div>
