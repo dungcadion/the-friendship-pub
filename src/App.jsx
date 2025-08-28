@@ -548,7 +548,7 @@ export default function App() {
             <img
               src={logoUrl}
               alt="The Friendship Pub Logo"
-              className="h-10 w-10 md:h-12 md:w-12 rounded-full border-2 border-[#FDE767]"
+              className="h-10 w-10 md:h-12 md:w-12"
             />
             <span
               className="text-white font-bold text-lg hidden sm:block"
