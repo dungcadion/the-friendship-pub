@@ -160,6 +160,24 @@ const HomeSection = () => (
       <p className="text-base md:text-lg lg:text-xl font-light text-gray-200 max-w-2xl mx-auto [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
         Friendship Highway, Angeles City, Pampanga.
       </p>
+      <div className="flex flex-col md:flex-row justify-center gap-6 mt-8">
+        <a
+          href={foodMenuPdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
+        >
+          Food Menu
+        </a>
+        <a
+          href={drinksMenuPdf}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
+        >
+          Drinks Menu
+        </a>
+      </div>
     </div>
   </section>
 );
