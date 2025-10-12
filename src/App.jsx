@@ -160,23 +160,13 @@ const HomeSection = () => (
       <p className="text-base md:text-lg lg:text-xl font-light text-gray-200 max-w-2xl mx-auto [text-shadow:0_2px_4px_rgba(0,0,0,0.5)]">
         Friendship Highway, Angeles City, Pampanga.
       </p>
-      <div className="flex flex-col md:flex-row justify-center gap-6 mt-8">
-        <a
-          href={foodMenuPdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
+      <div className="flex justify-center mt-8">
+        <button
+          onClick={() => window.open(foodMenuPdf, "_blank")}
+          className="bg-[#FDE767] text-black font-bold py-3 px-8 rounded-lg hover:bg-yellow-300 transition-colors"
         >
-          Food Menu
-        </a>
-        <a
-          href={drinksMenuPdf}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
-        >
-          Drinks Menu
-        </a>
+          View Full Menu
+        </button>
       </div>
     </div>
   </section>
@@ -234,20 +224,8 @@ const cocktailImages = [
 ];
 
 const MenuSection = () => {
-  const [loadingPdf, setLoadingPdf] = useState(null); // This state will track which PDF is "loading"
-
-  // This function handles the click event
-  const handlePdfClick = (pdfUrl, pdfType) => {
-    // 1. Set the loading state to show the "Loading..." text
-    setLoadingPdf(pdfType);
-
-    // 2. Open the PDF in a new tab
-    window.open(pdfUrl, "_blank");
-
-    // 3. After 3 seconds, reset the state to hide the loading text
-    setTimeout(() => {
-      setLoadingPdf(null);
-    }, 3000);
+  const handlePdfClick = () => {
+    window.open(foodMenuPdf, "_blank");
   };
 
   return (
@@ -292,31 +270,13 @@ const MenuSection = () => {
           <p className="text-lg text-gray-400 mt-4 max-w-2xl mx-auto">
             View our full selection of food and drinks.
           </p>
-          <div className="flex flex-col md:flex-row justify-center gap-6 mt-8">
-            <a
-              href={foodMenuPdf}
-              onClick={(e) => {
-                e.preventDefault(); // Stop the link from opening immediately
-                handlePdfClick(foodMenuPdf, "food");
-              }}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
+          <div className="flex justify-center mt-8">
+            <button
+              onClick={handlePdfClick}
+              className="bg-[#FDE767] text-black font-bold py-3 px-8 rounded-lg hover:bg-yellow-300 transition-colors"
             >
-              {loadingPdf === "food" ? "Loading..." : "Food Menu"}
-            </a>
-            <a
-              href={drinksMenuPdf}
-              onClick={(e) => {
-                e.preventDefault(); // Stop the link from opening immediately
-                handlePdfClick(drinksMenuPdf, "drinks");
-              }}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-[#FDE767] text-black font-bold py-3 px-6 rounded-lg hover:bg-yellow-300 transition-colors"
-            >
-              {loadingPdf === "drinks" ? "Loading..." : "Drinks Menu"}
-            </a>
+              View Full Menu
+            </button>
           </div>
         </div>
       </div>
