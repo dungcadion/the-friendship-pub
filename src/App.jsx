@@ -42,6 +42,9 @@ import cocktail4 from "./assets/images/cocktails/4.jpg";
 import cocktail5 from "./assets/images/cocktails/5.jpg";
 import cocktail6 from "./assets/images/cocktails/6.jpg";
 
+// --- GLOBAL CONSTANTS ---
+const ACCENT_COLOR = "#FDE767"; // Define your accent color
+
 // --- Constants for local images ---
 const logoUrl = myLogo;
 const heroBgUrl = gallery7; // Using gallery7 for the hero background
@@ -213,7 +216,7 @@ const AboutSection = () => (
 const foodMenuPdf = "/menus/food-menu.pdf";
 const drinksMenuPdf = "/menus/drinks-menu.pdf";
 
-// --- NEW: Data for the new cocktail gallery ---
+// --- Data for the new cocktail gallery ---
 const cocktailImages = [
   { src: cocktail1 },
   { src: cocktail2 },
@@ -346,6 +349,39 @@ const GallerySection = () => {
   );
 };
 
+// --- NEW OperatingHours Component ---
+const OperatingHours = () => {
+  const hoursData = [
+    { day: "Sunday", hours: "5pm - 2am" },
+    { day: "Monday", hours: "Closed" },
+    { day: "Tuesday", hours: "5pm - 2am" },
+    { day: "Wednesday", hours: "5pm - 2am" },
+    { day: "Thursday", hours: "5pm - 2am" },
+    { day: "Friday", hours: "5pm - 2am" },
+    { day: "Saturday", hours: "5pm - 2am" },
+  ];
+
+  const todayIndex = new Date().getDay();
+
+  return (
+    <div className="text-lg space-y-1">
+      {hoursData.map((item, index) => {
+        const isToday = index === todayIndex;
+        const todayClass = isToday
+          ? "font-bold text-[#FDE767]"
+          : "text-gray-300";
+
+        return (
+          <div key={item.day} className={`flex ${todayClass}`}>
+            <span className="w-28">{item.day}</span>
+            <span>{item.hours}</span>
+          </div>
+        );
+      })}
+    </div>
+  );
+};
+
 const GOOGLE_FORM_ACTION_URL =
   "https://docs.google.com/forms/u/0/d/e/1FAIpQLSfvtYWkuc_lzieJuueivrZTbbYIsbmeF2QMrXC26nVvYKrw0A/formResponse";
 const FIELD_NAME = "entry.1493290342";
@@ -453,15 +489,17 @@ const ContactSection = () => {
                 Angeles City, Pampanga
               </p>
               <p className="text-lg text-gray-400">Philippines</p>
+
+              {/* --- THIS IS WHERE THE CHANGE WAS MADE --- */}
               <h3 className="text-2xl font-bold text-white mt-6 mb-4">Hours</h3>
-              <p className="text-lg">Tuesday - Sunday: 4pm - 1am</p>
-              <p className="text-lg">Monday: Closed</p>
+              <OperatingHours />
+              {/* --- END OF CHANGE --- */}
             </div>
             <div className="h-64 lg:h-80 w-full rounded-lg overflow-hidden">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3851.216112902587!2d120.5573954433203!3d15.146471566420342!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3396f314b4c2cd3f%3A0xb15c30c1060444f1!2sThe%20Friendship%20Pub!5e0!3m2!1sen!2sph!4v1754562554718!5m2!1sen!2sph"
                 width="100%"
-                height="100%"
+                height="1G00%"
                 style={{ border: 0 }}
                 allowFullScreen=""
                 loading="lazy"
