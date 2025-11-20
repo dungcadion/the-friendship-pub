@@ -1,6 +1,15 @@
 import React, { useState, useEffect, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
-import { Menu as MenuIcon, X, ArrowLeft, ArrowRight } from "lucide-react";
+// --- FIX: Added Phone and Mail to imports ---
+import {
+  Menu as MenuIcon,
+  X,
+  ArrowLeft,
+  ArrowRight,
+  Phone,
+  Mail,
+} from "lucide-react";
+import { Helmet } from "react-helmet-async";
 
 // --- Local Image Imports ---
 import myLogo from "./assets/images/logo.png";
@@ -514,28 +523,51 @@ const ContactSection = () => {
 };
 
 const Footer = () => (
-  <footer className="bg-black text-gray-500 py-3">
-    <div className="container mx-auto px-6 lg:px-8 text-center">
-      <p>
-        © {new Date().getFullYear()} The Friendship Pub. All Rights Reserved.
-      </p>
-      <div className="flex justify-center space-x-6 mt-4">
+  <footer className="bg-black text-gray-500 py-8">
+    <div className="container mx-auto px-6 lg:px-8 flex flex-col items-center gap-6">
+      {/* --- Contact Info --- */}
+      <div className="flex flex-col md:flex-row gap-6 md:gap-12 items-center justify-center text-sm md:text-base">
         <a
-          href="https://www.facebook.com/profile.php?id=61577305734801"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-400 hover:text-[#FDE767] transition-colors"
+          href="tel:+639087161885"
+          className="flex items-center gap-3 text-gray-400 hover:text-[#FDE767] transition-colors"
         >
-          <FacebookIcon className="w-5 h-5 fill-current" />
+          <Phone size={20} className="text-[#FDE767]" />
+          <span>+63 908 716 1885</span>
         </a>
         <a
-          href="https://www.instagram.com/thefriendship.pub/?igsh=eXhuoWxmcWI0eGoz"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-gray-400 hover:text-[#FDE767] transition-colors"
+          href="mailto:thepub.friendship@gmail.com"
+          className="flex items-center gap-3 text-gray-400 hover:text-[#FDE767] transition-colors"
         >
-          <InstagramIcon className="w-5 h-5 fill-current" />
+          <Mail size={20} className="text-[#FDE767]" />
+          <span>thepub.friendship@gmail.com</span>
         </a>
+      </div>
+
+      <div className="w-full border-t border-gray-900 my-2"></div>
+
+      {/* --- Socials & Copyright --- */}
+      <div className="flex flex-col items-center gap-4">
+        <div className="flex justify-center space-x-6">
+          <a
+            href="https://www.facebook.com/profile.php?id=61577305734801"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-[#FDE767] transition-colors"
+          >
+            <FacebookIcon className="w-5 h-5 fill-current" />
+          </a>
+          <a
+            href="https://www.instagram.com/thefriendship.pub/?igsh=eXhuoWxmcWI0eGoz"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-400 hover:text-[#FDE767] transition-colors"
+          >
+            <InstagramIcon className="w-5 h-5 fill-current" />
+          </a>
+        </div>
+        <p className="text-sm text-gray-600">
+          © {new Date().getFullYear()} The Friendship Pub. All Rights Reserved.
+        </p>
       </div>
     </div>
   </footer>
@@ -588,6 +620,44 @@ export default function App() {
 
   return (
     <div className="bg-[#0F0F0F] min-h-screen">
+      {/* --- FIX: RESTORE HELMET BLOCK --- */}
+      <Helmet>
+        <title>The Friendship Pub | English-Inspired Pub in Angeles City</title>
+        <meta
+          name="description"
+          content="Visit The Friendship Pub on Friendship Highway, Angeles City for a wide selection of draft beers, classic cocktails, and delicious pub food. Open Tuesday to Sunday."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://thefriendshippub.com/" />
+        <meta
+          property="og:title"
+          content="The Friendship Pub | English-Inspired Pub in Angeles City"
+        />
+        <meta
+          property="og:description"
+          content="The best English-inspired pub on Friendship Highway."
+        />
+        <meta
+          property="og:image"
+          content="https://thefriendshippub.com/outside.jpg"
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://thefriendshippub.com/" />
+        <meta
+          property="twitter:title"
+          content="The Friendship Pub | English-Inspired Pub in Angeles City"
+        />
+        <meta
+          property="twitter:description"
+          content="The best English-inspired pub on Friendship Highway."
+        />
+        <meta
+          property="twitter:image"
+          content="https://thefriendshippub.com/outside.jpg"
+        />
+        <link rel="canonical" href="https://thefriendshippub.com/" />
+      </Helmet>
+
       <SocialSidebar />
 
       <header className="fixed top-0 left-0 w-full bg-black bg-opacity-50 backdrop-filter backdrop-blur-lg z-50 transition-all duration-300">
@@ -600,7 +670,7 @@ export default function App() {
             <img
               src={logoUrl}
               alt="The Friendship Pub Logo"
-              className="h-10 w-10 md:h-12 md:w-12"
+              className="h-10 w-10 md:h-12 md:w-12 rounded-full border-2 border-[#FDE767]"
             />
             <span
               className="text-white font-bold text-lg hidden sm:block"
