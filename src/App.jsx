@@ -212,9 +212,12 @@ const AboutSection = () => (
             Carbonara and Lasagna. The drink menu offers a comprehensive
             selection, including cocktails, whiskey, and a variety of beers. We
             serve draft beers on tap, with varieties that sometimes change.
-            Currently available draft beers include Hoegaarden Rosée (3% ABV)
-            and Sapporo Premium Beer (5% ABV), as well as Mixtape Pale Ale (5.5%
-            ABV) and German Märzen (6% ABV).
+            Currently available options include Hoegaarden Rosée (3% ABV), 3006
+            Palisade Lager (5% ABV), Sapporo Premium Beer (5% ABV), and Estrella
+            Galicia (5.5% ABV). For those seeking bolder flavors, we also
+            feature Sapporo Premium Black (5% ABV), Mitchell’s Backyard Harmony
+            (6.2% ABV), Elias Hop Boi IPA (6.5% ABV), and Elias Viking’s Honey
+            Mead with Dalandan (7% ABV).
           </p>
         </div>
       </div>
